@@ -1,17 +1,20 @@
 @extends('index')
 
 @section('session')
+<div class="formulario">
+
     <form action="{{ route('login') }}" method="post">
         @csrf
-        <input type="text" name="email" placeholder="Email" value="{{ old('email') }}">
+        <input class="text" type="text" name="email" placeholder="Email" value="{{ old('email') }}">
         @error('email')
-            <small>{{ $message }}</small>
+       <small style="color: red" >{{ $message }}</small>
         @enderror
-        <input type="password" name="password" placeholder="Contraseña" value="{{ old('password') }}">
+        <input class="text" type="password" name="password" placeholder="Contraseña" value="{{ old('password') }}">
         @error('password')
-            <small>{{ $message }}</small>
+       <small style="color: red" >{{ $message }}</small>
         @enderror
-
-        <input type="submit" value="Iniciar sesion">
+        
+        <input id="btn" type="submit" value="Iniciar sesion">
     </form>
+</div>
 @endsection

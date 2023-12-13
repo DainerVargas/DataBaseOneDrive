@@ -12,7 +12,7 @@
     @vite('resources/css/app.css')
     @vite('resources/css/app.css')
     <header class="principal">
-        <h2>LOGO</h2>
+        <h2 class="logo">LOGO</h2>
         <input class="search" type="text" name="search" placeholder="Search">
         <nav class="links">
             <a href="{{route('session')}}">Iniciar Sesion</a>

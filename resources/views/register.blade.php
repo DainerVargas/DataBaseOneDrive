@@ -3,34 +3,41 @@
     <div class="formulario">
         <form action="{{ route('store') }}" method="post">
             @csrf
-            <input type="text" name="name" placeholder="Nombre" value="{{ old('name') }}">
+            <input class="text" type="text" name="name" placeholder="Nombre" value="{{ old('name') }}">
             @error('name')
-                <small>{{ $message }}</small>
+               <small style="color: red" >{{ $message }}</small>
             @enderror
-            <input type="text" name="email" placeholder="Email" value="{{ old('email') }}">
+            <input class="text" type="text" name="email" placeholder="Email" value="{{ old('email') }}">
             @error('email')
-                <small>{{ $message }}</small>
+               <small style="color: red" >{{ $message }}</small>
             @enderror
-            <input type="password" name="password" placeholder="Contraseña" value="{{ old('password') }}">
+            <input class="text" type="password" name="password" placeholder="Contraseña" value="{{ old('password') }}">
             @error('password')
-                <small>{{ $message }}</small>
+               <small style="color: red" >{{ $message }}</small>
             @enderror
-            <select name="gender_id">
-                <option value="" selected hidden>Seleccione una opcion</option>
-                @foreach ($gender as $item)
-                    <option value="{{ $item->id }}" {{ old('gender_id') == $item->id ? 'selected' : '' }}>
-                        {{ $item->name }}</option>
-                @endforeach
-            </select>
-            <select name="rol_id">
-                <option value="" selected hidden>Seleccione una opcion</option>
-                @foreach ($rol as $item)
-                    <option value="{{ $item->id }}" {{ old('rol_id') == $item->id ? 'selected' : '' }}>
-                        {{ $item->name }}</option>
-                @endforeach
-            </select>
-            <input type="submit" value="Registrame">
+            <div id="selecciones">
+                <select class="text" name="gender_id">
+                    <option value="" selected hidden>Elija una opcion</option>
+                    @foreach ($gender as $item)
+                        <option value="{{ $item->id }}" {{ old('gender_id') == $item->id ? 'selected' : '' }}>
+                            {{ $item->name }}</option>
+                    @endforeach
+                </select>
+                @error('gender_id')
+                   <small style="color: red" >{{ $message }}</small>
+                @enderror
+                <select class="text" name="rol_id">
+                    <option value="" selected hidden>Elija una opcion</option>
+                    @foreach ($rol as $item)
+                        <option value="{{ $item->id }}" {{ old('rol_id') == $item->id ? 'selected' : '' }}>
+                            {{ $item->name }}</option>
+                    @endforeach
+                </select>
+                @error('rol_id')
+                   <small style="color: red" >{{ $message }}</small>
+                @enderror
+            </div>
+            <input id="btn" type="submit" value="Registrame">
         </form>
     </div>
-    
 @endsection
