@@ -16,7 +16,7 @@
         <input class="search" type="text" name="search" placeholder="Search">
         <nav class="links">
             <a href="{{route('session')}}">Iniciar Sesion</a>
-            <a href="{{route('register')}}">Registrarse</a>
+            <a href="{{route('register')}}">Registrarse </a>
         </nav>
     </header>
 
