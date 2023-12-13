@@ -62,5 +62,5 @@ jobs:
         with:
           app-name: 'Dainerws'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7BC9FEF9DE9441D3A0A1BEED96AD9FA1 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3A98294D07524724ADA25F222ED7DA47 }}
           package: .
